@@ -60,8 +60,8 @@ write-host "Le compte $userprincipalname a été crée. son mot de passe est: $s
 
 # Create home directory
     $fileServer = switch -regex ($samaccountname) {
-        '^[a-m][^0]' { "fs-users01" }
-        '^[n-z][^0]' { "fs-users02" }
+        '^[a-m][^0]' { "srv-users01" }
+        '^[n-z][^0]' { "srv-users02" }
     }
     $homedir = "\\$fileServer\users\$samaccountname"
 
