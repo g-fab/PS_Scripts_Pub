@@ -107,7 +107,7 @@ $acl3 | Set-Acl
 
 
 
-#ajout custom attribute cap15 pour ajout list distrib dyn
+#ajout custom attribute xxx pour ajout list distrib dyn
 if ($site -like "site1")
 {
 set-aduser -Identity $samAccountName -replace @{ExtensionAttribute8="site1"}
@@ -127,8 +127,8 @@ Write-Host "licence premium attribuée à $samaccountname" -ForegroundColor Gree
 
 #add group map FS
 $FSgroup = switch -regex ($samaccountname) {
-        '^[a-m][^0]' { "map_homedir_srv-users01" }
-        '^[n-z][^0]' { "map_homedir_srv-users02" }
+        '^[a-m][^0]' { "map_homedir_srv-home01" }
+        '^[n-z][^0]' { "map_homedir_srv-home02" }
     }
 Add-ADGroupMember -Identity $FSgroup -Members $samaccountname
 
