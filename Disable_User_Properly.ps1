@@ -36,7 +36,7 @@ foreach ($user in $userslist)
     Set-ADObject -identity $dn -clear wWWHomePage
 
 #Move disabled user to Disabled OU 
-    Move-ADObject -Identity (Get-ADuser $sam) -TargetPath 'OU=Dissabled_Users,DC=domain,DC=com'
+    Move-ADObject -Identity (Get-ADuser $sam) -TargetPath 'OU=Disabled_Users,DC=domain,DC=com'
     Write-Host "$sam moved to Disabled Users" -foregroundcolor green
 
 
