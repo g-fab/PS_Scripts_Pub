@@ -32,6 +32,13 @@ foreach ($user in $userslist)
     Set-ADObject -identity $dn -clear ShowinAddressBook
     Write-Host "$sam hidden from addressBook" -foregroundcolor green
 
+#delete extensionAttribute8 and office location
+    if (get-aduser -identity $sam | select extensionAttribute8) {
+    set-adobject -Identity $dn -clear extensionAttribute8
+    set-adobject -Identity $dn -clear physicalDeliveryOfficeName
+     }
+
+
 #supprimer le matricule
     Set-ADObject -identity $dn -clear wWWHomePage
 
