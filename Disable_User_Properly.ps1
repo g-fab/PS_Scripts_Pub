@@ -39,6 +39,8 @@ foreach ($user in $userslist)
     set-adobject -Identity $dn -clear proxyAddresses
     set-adobject -Identity $dn -clear mail
     set-adobject -Identity $dn -clear legacyExchangeDN
+    set-adobject -Identity $dn -clear targetAddress
+    set-adobject -Identity $dn -clear userPrincipalName
      }
 
 
