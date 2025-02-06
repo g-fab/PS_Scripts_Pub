@@ -36,6 +36,9 @@ foreach ($user in $userslist)
     if (get-aduser -identity $sam | select extensionAttribute8) {
     set-adobject -Identity $dn -clear extensionAttribute8
     set-adobject -Identity $dn -clear physicalDeliveryOfficeName
+    set-adobject -Identity $dn -clear proxyAddresses
+    set-adobject -Identity $dn -clear mail
+    set-adobject -Identity $dn -clear legacyExchangeDN
      }
 
 
